@@ -18,10 +18,10 @@ public class Offer {
     @NotBlank
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "offer")
     private List<OfferIngredientMinQuantity> requiredIngredients = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "offer")
     private List<OfferIngredientMinQuantity> excludedIngredients = new ArrayList<>();;
 
     @NotNull

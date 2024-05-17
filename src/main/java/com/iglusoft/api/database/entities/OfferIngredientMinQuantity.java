@@ -10,7 +10,7 @@ public class OfferIngredientMinQuantity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Ingredient ingredient;
 
     @Positive
@@ -19,6 +19,9 @@ public class OfferIngredientMinQuantity {
 
     @Positive
     private int paidQuantity;
+
+    @ManyToOne
+    private Offer offer;
 
     public OfferIngredientMinQuantity() {
     }
@@ -60,5 +63,13 @@ public class OfferIngredientMinQuantity {
 
     public void setPaidQuantity(int paidQuantity) {
         this.paidQuantity = paidQuantity;
+    }
+
+    public Offer getOffer() {
+        return offer;
+    }
+
+    public void setOffer(Offer offer) {
+        this.offer = offer;
     }
 }

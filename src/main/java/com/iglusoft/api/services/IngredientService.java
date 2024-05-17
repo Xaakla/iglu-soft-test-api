@@ -45,6 +45,10 @@ public class IngredientService implements IValidatesObject<Ingredient> {
         return this.ingredientRepository.findAll();
     }
 
+    public Ingredient findById(Long id) {
+        return this.ingredientRepository.findById(id).orElseThrow(NotFoundException::new);
+    }
+
     @Transactional
     public void deleteIngredient(Long id) {
         if (!this.ingredientRepository.existsById(id))
