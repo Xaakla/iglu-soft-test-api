@@ -1,17 +1,14 @@
-package com.iglusoft.api.database.entities;
+package com.iglusoft.api.dtos;
 
-import jakarta.persistence.*;
+import com.iglusoft.api.database.entities.OfferIngredientMinQuantity;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-@Entity
-public class OfferIngredientMinQuantity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class OfferIngredientMinQuantityDto {
+    @Positive
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Ingredient ingredient;
+    private IngredientDto ingredient;
 
     @Positive
     @NotNull
@@ -20,14 +17,14 @@ public class OfferIngredientMinQuantity {
     @Positive
     private int paidQuantity;
 
-    public OfferIngredientMinQuantity() {
+    public OfferIngredientMinQuantityDto() {
     }
 
-    public OfferIngredientMinQuantity(Long id, Ingredient ingredient, int minQuantity, int paidQuantity) {
-        this.id = id;
-        this.ingredient = ingredient;
-        this.minQuantity = minQuantity;
-        this.paidQuantity = paidQuantity;
+    public OfferIngredientMinQuantityDto(OfferIngredientMinQuantity offerIngredientMinQuantity) {
+        this.id = offerIngredientMinQuantity.getId();
+        this.ingredient = new IngredientDto(offerIngredientMinQuantity.getIngredient());
+        this.minQuantity = offerIngredientMinQuantity.getMinQuantity();
+        this.paidQuantity = offerIngredientMinQuantity.getPaidQuantity();
     }
 
     public Long getId() {
@@ -38,11 +35,11 @@ public class OfferIngredientMinQuantity {
         this.id = id;
     }
 
-    public Ingredient getIngredient() {
+    public IngredientDto getIngredient() {
         return ingredient;
     }
 
-    public void setIngredient(Ingredient ingredient) {
+    public void setIngredient(IngredientDto ingredient) {
         this.ingredient = ingredient;
     }
 

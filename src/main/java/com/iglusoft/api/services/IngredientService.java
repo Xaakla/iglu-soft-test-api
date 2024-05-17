@@ -35,9 +35,8 @@ public class IngredientService implements IValidatesObject<Ingredient> {
         ingredientToSave.setSalePrice(newEditIngredientDto.salePrice());
 
         var validationResponse = validate(ingredientToSave);
-        if (validationResponse.isInvalid()) {
+        if (validationResponse.isInvalid())
             throw new BusinessException(validationResponse.message());
-        }
 
         return this.ingredientRepository.save(ingredientToSave);
     }
