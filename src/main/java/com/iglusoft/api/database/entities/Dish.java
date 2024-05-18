@@ -19,7 +19,7 @@ public class Dish {
 
     @NotNull
     @Positive
-    private Long totalPrice;
+    private Double totalPrice;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "dish")
     private List<DishIngredientQuantity> ingredients = new ArrayList<>();
@@ -43,11 +43,11 @@ public class Dish {
         this.name = name;
     }
 
-    public Long getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

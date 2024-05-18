@@ -17,7 +17,6 @@ public class OfferIngredientMinQuantity {
     @NotNull
     private int minQuantity;
 
-    @Positive
     private int paidQuantity;
 
     @ManyToOne

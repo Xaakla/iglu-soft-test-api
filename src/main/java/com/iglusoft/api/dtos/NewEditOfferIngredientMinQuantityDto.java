@@ -15,7 +15,6 @@ public class NewEditOfferIngredientMinQuantityDto {
     @NotNull
     private int minQuantity;
 
-    @Positive
     private int paidQuantity;
 
     public NewEditOfferIngredientMinQuantityDto() {

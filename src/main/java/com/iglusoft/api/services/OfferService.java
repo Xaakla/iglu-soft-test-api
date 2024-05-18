@@ -18,16 +18,18 @@ public class OfferService {
     private final IngredientRepository ingredientRepository;
     private final OfferIngredientMinQuantityRepository offerIngredientMinQuantityRepository;
     private final IngredientService ingredientService;
+    private final DishService dishService;
 
     public OfferService(
             OfferRepository offerRepository,
             IngredientRepository ingredientRepository,
             OfferIngredientMinQuantityRepository offerIngredientMinQuantityRepository,
-            IngredientService ingredientService) {
+            IngredientService ingredientService, DishService dishService) {
         this.offerRepository = offerRepository;
         this.ingredientRepository = ingredientRepository;
         this.offerIngredientMinQuantityRepository = offerIngredientMinQuantityRepository;
         this.ingredientService = ingredientService;
+        this.dishService = dishService;
     }
 
     @Transactional
@@ -41,7 +43,6 @@ public class OfferService {
         offerToSave.setName(newEditOffer.name());
         offerToSave.setDiscountAmount(newEditOffer.discountAmount());
         offerToSave.setDiscountType(newEditOffer.discountType());
-
 
         if (isEdit)
             offerIngredientMinQuantityRepository.deleteAllByOfferId(offerToSave.getId());
@@ -73,6 +74,8 @@ public class OfferService {
                     return offerIngredientMinQuantity;
                 }).toList()
         );
+
+        dishService.recalculateDishesTotalPriceByOffer(offerToSave);
 
         return offerRepository.save(offerToSave);
     }

@@ -17,7 +17,7 @@ public class DishDto {
 
     @Positive
     @NotNull
-    private Long totalPrice;
+    private Double totalPrice;
 
     private List<DishIngredientQuantity> ingredients;
 
@@ -45,11 +45,11 @@ public class DishDto {
         this.name = name;
     }
 
-    public Long getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 }
