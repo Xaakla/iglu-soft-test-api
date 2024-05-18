@@ -22,7 +22,7 @@ public class OfferDto {
     private DiscountType discountType;
 
     @Positive
-    private Double discountAmount;
+    private Long discountAmount;
 
     public OfferDto() {
     }
@@ -76,11 +76,11 @@ public class OfferDto {
         this.discountType = discountType;
     }
 
-    public Double getDiscountAmount() {
+    public Long getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(Long discountAmount) {
         this.discountAmount = discountAmount;
     }
 }

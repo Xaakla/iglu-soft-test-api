@@ -12,6 +12,6 @@ public record NewEditOffer(
         List<NewEditOfferIngredientMinQuantityDto> requiredIngredients,
         List<NewEditOfferIngredientMinQuantityDto> excludedIngredients,
         DiscountType discountType,
-        @Positive Double discountAmount
+        @Positive Long discountAmount
 ) {
 }

@@ -18,10 +18,10 @@ public class Offer {
     @NotBlank
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "offer")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OfferIngredientMinQuantity> requiredIngredients = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "offer")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OfferIngredientMinQuantity> excludedIngredients = new ArrayList<>();;
 
     @NotNull
@@ -29,7 +29,7 @@ public class Offer {
     private DiscountType discountType;
 
     @Positive
-    private Double discountAmount;
+    private Long discountAmount;
 
     public Offer() {
     }
@@ -66,11 +66,11 @@ public class Offer {
         this.discountType = discountType;
     }
 
-    public Double getDiscountAmount() {
+    public Long getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(Double discountAmount) {
+    public void setDiscountAmount(Long discountAmount) {
         this.discountAmount = discountAmount;
     }
 }
