@@ -19,16 +19,14 @@ public class OfferService {
     private final OfferRepository offerRepository;
     private final OfferIngredientMinQuantityRepository offerIngredientMinQuantityRepository;
     private final IngredientService ingredientService;
-    private final DishService dishService;
 
     public OfferService(
             OfferRepository offerRepository,
             OfferIngredientMinQuantityRepository offerIngredientMinQuantityRepository,
-            IngredientService ingredientService, DishService dishService) {
+            IngredientService ingredientService) {
         this.offerRepository = offerRepository;
         this.offerIngredientMinQuantityRepository = offerIngredientMinQuantityRepository;
         this.ingredientService = ingredientService;
-        this.dishService = dishService;
     }
 
     @Transactional
@@ -54,6 +52,10 @@ public class OfferService {
 
     public List<Offer> findAllOffers() {
         return offerRepository.findAll();
+    }
+
+    public Offer findOfferById(long id) {
+        return offerRepository.findById(id).orElseThrow(NotFoundException::new);
     }
 
     @Transactional

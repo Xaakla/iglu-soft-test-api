@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ingredients")
 public class IngredientController {
@@ -31,6 +32,11 @@ public class IngredientController {
     @GetMapping()
     public ResponseEntity<List<IngredientDto>> findAllIngredients() {
         return ResponseEntity.ok(this.ingredientService.findAllIngredients().stream().map(IngredientDto::new).toList());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<IngredientDto> findIngredientById(@PathVariable Long id) {
+        return ResponseEntity.ok(new IngredientDto(this.ingredientService.findById(id)));
     }
 
     @PatchMapping("/{id}")

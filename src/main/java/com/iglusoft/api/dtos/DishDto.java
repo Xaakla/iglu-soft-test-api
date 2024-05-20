@@ -19,7 +19,7 @@ public class DishDto {
     @NotNull
     private Long totalPrice;
 
-    private List<DishIngredientQuantity> ingredients;
+    private List<DishIngredientQuantityDto> ingredients;
 
     public DishDto() {}
 
@@ -27,6 +27,7 @@ public class DishDto {
         this.id = dish.getId();
         this.name = dish.getName();
         this.totalPrice = dish.getTotalPrice();
+        this.ingredients = dish.getIngredients().stream().map(DishIngredientQuantityDto::new).toList();
     }
 
     public Long getId() {
@@ -51,5 +52,13 @@ public class DishDto {
 
     public void setTotalPrice(Long totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public List<DishIngredientQuantityDto> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<DishIngredientQuantityDto> ingredients) {
+        this.ingredients = ingredients;
     }
 }

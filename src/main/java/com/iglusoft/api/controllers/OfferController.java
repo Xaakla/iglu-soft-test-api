@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/offers")
 public class OfferController {
@@ -24,6 +25,11 @@ public class OfferController {
     @GetMapping()
     public ResponseEntity<List<OfferDto>> getAllOffers() {
         return ResponseEntity.ok(this.offerService.findAllOffers().stream().map(OfferDto::new).toList());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<OfferDto> getOfferById(@PathVariable long id) {
+        return ResponseEntity.ok(new OfferDto(this.offerService.findOfferById(id)));
     }
 
     @PostMapping()
