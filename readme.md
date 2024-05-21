@@ -11,14 +11,21 @@ e outros podem conter ingredientes personalizados.
 - Ter o git instalado, para ter acesso ao comando
 `git clone` no terminal.
 
-Clone o repositório usando o comando: `git clone https://github.com/Xaakla/iglu-soft-test-api.git`.
+Clone o repositório usando o comando:
+
+`git clone https://github.com/Xaakla/iglu-soft-test-api.git`.
+
 Ou se preferir baixe o zip do projeto deste mesmo link.
 
-Com o Docker aberto, abra o terminal no diretório do projeto e execute o comando
-```git clone https://github.com/Xaakla/iglu-soft-test-web```
+Com o Docker aberto, abra o terminal no diretório do projeto e execute o comando:
+
+`git clone https://github.com/Xaakla/iglu-soft-test-web`
+
 para criar a imagem da aplicação.
 
-Para criar um container e inicializar a aplicação, execute o comando `docker compose up`.
+Para criar um container e inicializar a aplicação, execute o comando:
+
+`docker compose up`.
 
 Feito isso a api já deve estar rodando na porta 8080 da sua máquina.
 
