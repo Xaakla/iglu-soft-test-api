@@ -14,7 +14,9 @@ e outros podem conter ingredientes personalizados.
 Clone o repositório usando o comando: `git clone https://github.com/Xaakla/iglu-soft-test-api.git`.
 Ou se preferir baixe o zip do projeto deste mesmo link.
 
-Com o Docker aberto, abra o terminal no diretório do projeto e execute o comando `./mvnw spring-boot:build-image` para criar a imagem da aplicação.
+Com o Docker aberto, abra o terminal no diretório do projeto e execute o comando
+`./mvnw spring-boot:build-image`
+para criar a imagem da aplicação.
 
 Para criar um container e inicializar a aplicação, execute o comando `docker compose up`.
 
