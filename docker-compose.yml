@@ -1,0 +1,9 @@
+version: '1.0'
+name: iglu-soft-test
+services:
+  app:
+    container_name: iglu-soft-test
+    hostname: iglu-soft-test
+    image: iglu-soft-test:0.0.1-SNAPSHOT
+    ports:
+    - "8080:8080"
