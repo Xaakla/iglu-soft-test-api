@@ -7,9 +7,9 @@ e outros podem conter ingredientes personalizados.
 
 ### Como rodar essa API na sua maquina?
 #### Pré requisitos: 
+- Ter o JAVA 8 ou superior instalado e a variável JAVA_HOME configurado nas variáveis de ambiente da sua máquina.
 - Ter o docker instalado, para conseguir criar o container do app.
-- Ter o git instalado, para ter acesso ao comando
-`git clone` no terminal.
+- Ter o git instalado, para ter acesso ao comando `git clone` no terminal.
 
 Clone o repositório usando o comando:
 
