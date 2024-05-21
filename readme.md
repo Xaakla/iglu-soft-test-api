@@ -68,6 +68,8 @@ Com os dados no banco de dados, podemos usar os beans reais do contexto Spring, 
 
 Outra vantagem significativa é a redução do tempo de desenvolvimento dos testes. Sem a necessidade de criar mocks, a escrita de novos testes torna-se mais rápida e a manutenção é simplificada. Qualquer alteração no comportamento de uma função será percebida imediatamente, já que não há resultados simulados.
 
+Além disso, como utilizamos um banco de dados em memória específico para testes, evitamos a poluição do banco de dados real, mantendo-o limpo e livre de dados temporários.
+
 ### Principais Classes
 - **Ingredient**: Entidade usada para representar os ingredientes no banco de dados
 - **Dish**: Entidade usada para representar os lanches no banco de dados
