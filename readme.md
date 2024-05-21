@@ -29,6 +29,10 @@ Para criar um container e inicializar a aplicação, execute o comando:
 
 Feito isso a api já deve estar rodando na porta 8080 da sua máquina.
 
+Para rodar os testes unitários, abra o terminal no diretório do projeto e execute o comando:
+
+`./mvnw test`
+
 ### Objetivos da API
 - Ter endpoints para *Listar*, *Criar*, *Atualizar* e *Deletar* os INGREDIENTES, LANCHES e PROMOÇÕES no sistema.
 - Ter um endpoint para fazer os pedidos dos lanches cadastrados no sistema e visualizar os preços já com descontos, se tiver alguma promoção ativa.
