@@ -60,6 +60,14 @@ A pasta "services" agrupa os serviços do sistema, contendo toda a lógica e reg
 está agrupa mais duas pastas, "entities" e "repositories", que são responsáveis por agrupar as entidades do sistema e
 os repositórios respectivamente.
 
+### Testes Unitários
+
+Para a implementação dos testes, optamos por utilizar um banco de dados em memória. Isso facilita a execução dos testes, proporcionando um ambiente controlado e eficiente. Com a inclusão do arquivo `data-test.sql`, podemos popular o banco de dados com dados relevantes, como entradas para lanches, ofertas, ingredientes, entre outros. Essa abordagem é vantajosa, pois elimina a necessidade de criar mocks, permitindo simular o comportamento esperado de forma mais realista.
+
+Com os dados no banco de dados, podemos usar os beans reais do contexto Spring, executando um código que se assemelha mais ao utilizado em produção. Isso garante maior consistência e confiabilidade nos resultados dos testes, pois estamos sempre executando o código real. Além disso, elimina a necessidade de mocks, que são funções e serviços simulados.
+
+Outra vantagem significativa é a redução do tempo de desenvolvimento dos testes. Sem a necessidade de criar mocks, a escrita de novos testes torna-se mais rápida e a manutenção é simplificada. Qualquer alteração no comportamento de uma função será percebida imediatamente, já que não há resultados simulados.
+
 ### Principais Classes
 - **Ingredient**: Entidade usada para representar os ingredientes no banco de dados
 - **Dish**: Entidade usada para representar os lanches no banco de dados
