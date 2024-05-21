@@ -8,7 +8,9 @@ e outros podem conter ingredientes personalizados.
 ### Como rodar essa API na sua maquina?
 #### Pré requisitos: 
 - Ter o docker instalado, para conseguir criar o container do app.
-- Ter o git instalado, para ter acesso ao comando `git clone` no terminal.
+- Ter o git instalado, para ter acesso ao comando
+  `git clone`
+  no terminal.
 
 Clone o repositório usando o comando: `git clone https://github.com/Xaakla/iglu-soft-test-api.git`.
 Ou se preferir baixe o zip do projeto deste mesmo link.
