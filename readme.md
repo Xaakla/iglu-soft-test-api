@@ -46,6 +46,13 @@ Isso evita problemas de arredondamento comuns com valores decimais, facilita ope
 e melhora a compatibilidade com sistemas financeiros que esperam valores inteiros. Além disso, o uso de inteiros
 para representar preços é mais eficiente em termos de desempenho.
 
+### Tipos de desconto
+
+O enum DiscountType define os diferentes tipos de descontos disponíveis e fornece métodos para calcular o valor do desconto correspondente.
+Cada tipo de desconto possui um método associado (calculateDiscountAmount) que implementa a lógica específica de cálculo do desconto.
+Dessa forma mantemos a aplicação escalável, caso haja outros tipos de desconto no futuro precisamos apenas criar mais uma entrada no enum
+que estará disponível para todo o projeto.
+
 ### Estrutura do Código
 
 Feito na estrutura padrão MVC (Model-View-Controller), a API tem uma pasta "controllers", onde se encontra os endpoints da aplicação.
