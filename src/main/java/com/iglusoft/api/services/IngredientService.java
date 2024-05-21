@@ -60,6 +60,44 @@ public class IngredientService implements IValidatesObject<Ingredient> {
         this.ingredientRepository.deleteById(id);
     }
 
+    /**
+     * Valida um objeto {@link Ingredient} com base em várias regras de negócios.
+     *
+     * @param ingredient O objeto {@link Ingredient} a ser validado.
+     * @return Um {@link ObjectValidationResponse} indicando se a validação foi bem-sucedida ou falhou,
+     *         juntamente com uma mensagem apropriada.
+     *
+     * <p>
+     * Este método verifica se:
+     * </p>
+     * <ul>
+     *     <li>O campo 'name' não está vazio.</li>
+     *     <li>O campo 'salePrice' é maior que zero.</li>
+     *     <li>Não existe outro ingrediente com o mesmo nome e um ID diferente no repositório.</li>
+     * </ul>
+     *
+     * <p><strong>Exemplo de uso:</strong></p>
+     * <pre>{@code
+     * Ingredient ingredient = new Ingredient();
+     * ingredient.setName("Tomato");
+     * ingredient.setSalePrice(3L);
+     * ingredient.setId(1L);
+     *
+     * ObjectValidationResponse response = validate(ingredient);
+     * if (response.isValid()) {
+     *     System.out.println("Validation successful: " + response.getMessage());
+     * } else {
+     *     System.out.println("Validation failed: " + response.getMessage());
+     * }
+     * }</pre>
+     *
+     * <p><strong>Decisões de Design:</strong></p>
+     * <ul>
+     *     <li>O uso de mensagens específicas de erro para fornecer feedback claro sobre falhas de validação.</li>
+     *     <li>A verificação de existência de um ingrediente com o mesmo nome e ID diferente no repositório para garantir a unicidade do nome do ingrediente.</li>
+     *     <li>Uso de `Optional.ofNullable` para tratar o caso de ID nulo, garantindo que um valor padrão de 0 seja usado.</li>
+     * </ul>
+     */
     @Override
     public ObjectValidationResponse validate(Ingredient ingredient) {
         if (ingredient.getName().isEmpty()) {
@@ -74,4 +112,5 @@ public class IngredientService implements IValidatesObject<Ingredient> {
 
         return new ObjectValidationResponse(true, "Validated successfully.");
     }
+
 }

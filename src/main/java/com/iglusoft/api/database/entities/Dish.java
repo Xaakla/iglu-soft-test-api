@@ -21,7 +21,7 @@ public class Dish {
     @Positive
     private Long totalPrice;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "dish")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "dish", fetch = FetchType.EAGER)
     private List<DishIngredientQuantity> ingredients = new ArrayList<>();
 
     public Dish() {

@@ -54,8 +54,16 @@ public class Offer {
         return requiredIngredients;
     }
 
+    public void setRequiredIngredients(List<OfferIngredientMinQuantity> requiredIngredients) {
+        this.requiredIngredients = requiredIngredients;
+    }
+
     public List<OfferIngredientMinQuantity> getExcludedIngredients() {
         return excludedIngredients;
+    }
+
+    public void setExcludedIngredients(List<OfferIngredientMinQuantity> excludedIngredients) {
+        this.excludedIngredients = excludedIngredients;
     }
 
     public DiscountType getDiscountType() {
